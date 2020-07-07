@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom'
+import {isSigned} from '../helpers/session'
 
 interface MyInterface {
   component: React.FC,
@@ -13,20 +14,14 @@ export default function Router({
     isPrivate=false,
     ...rest
   }:MyInterface){
-  let signed = false
-
-  let session = sessionStorage.getItem('session');
-  if(session){
-    session = JSON.parse(session)
-    signed = true
-  }
+  const signed = isSigned()
 
   if(!signed && isPrivate){
     return <Redirect to="/sign_in" />
   }
 
   if(signed && !isPrivate){
-    return <Redirect to="/" />
+    return <Redirect to="/products" />
   }
 
   return <Route {...rest} component={Component} />

@@ -4,13 +4,13 @@ import api from '../../services/api'
 import {Button, Input, Form, message} from 'antd'
 import * as Styles from './styles'
 import {ErrorsEntity} from '../../interfaces';
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 
-const SignIn: React.FC = () => {
+const SignIn = () => {
   const history = useHistory()
   const [loading, setLoading] = useState(false)
-  const [email, setEmail] = useState('email@email.com')
-  const [password, setPassword] = useState('aaaa')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const formItemLayout = {
     labelCol: {span: 4},
@@ -63,6 +63,8 @@ const SignIn: React.FC = () => {
           <Button htmlType="submit" type="primary" block loading={loading}>Login</Button>
         </Form.Item>
       </Form>
+      <label>Não possui conta? <Link to="sign_up">Clique aqui</Link></label>
+
     </Styles.Container>
   )
 }

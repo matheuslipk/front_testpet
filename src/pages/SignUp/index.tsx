@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from '../../components/Header';
 
 // import { Container } from './styles';
 
 const SignUp: React.FC = () => {
   return (
-    <h1>SignUp</h1>
+    <Header />
   )
 }
 

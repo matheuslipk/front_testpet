@@ -10,6 +10,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   display: flex;
+  justify-content: space-between;
   height: 100px;
   background: #fff;
   flex-direction: row;
@@ -18,6 +19,13 @@ export const Content = styled.div`
 `;
 
 export const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+`;
+
+export const Logout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

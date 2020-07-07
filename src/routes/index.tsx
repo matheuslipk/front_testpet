@@ -4,16 +4,17 @@ import Route from './Route';
 
 import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
-import Home from '../pages/Home'
+import Products from '../pages/Products'
+import EditProducts from '../pages/EditProducts'
 import NotFound from '../pages/NotFound'
 
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route path="/" exact isPrivate component={Home} />
       <Route path="/sign_in" component={SignIn} />
       <Route path="/sign_up" component={SignUp} />
-      <Route path="/dashboard" isPrivate component={Home} />
+      <Route path="/products" exact isPrivate component={Products} />
+      <Route path="/products/edit/:id" exact isPrivate component={EditProducts} />
       <Route path="*" component={NotFound} />
     </Switch>
   )
