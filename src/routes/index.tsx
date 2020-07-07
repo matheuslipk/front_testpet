@@ -10,9 +10,10 @@ import NotFound from '../pages/NotFound'
 const Routes: React.FC = () => {
   return (
     <Switch>
+      <Route path="/" exact isPrivate component={Home} />
       <Route path="/sign_in" component={SignIn} />
       <Route path="/sign_up" component={SignUp} />
-      <Route path="/home" isPrivate component={Home} />
+      <Route path="/dashboard" isPrivate component={Home} />
       <Route path="*" component={NotFound} />
     </Switch>
   )

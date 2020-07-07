@@ -13,14 +13,20 @@ export default function Router({
     isPrivate=false,
     ...rest
   }:MyInterface){
-  const signed = false;
+  let signed = false
+
+  let session = sessionStorage.getItem('session');
+  if(session){
+    session = JSON.parse(session)
+    signed = true
+  }
 
   if(!signed && isPrivate){
     return <Redirect to="/sign_in" />
   }
 
   if(signed && !isPrivate){
-    return <Redirect to="/home" />
+    return <Redirect to="/" />
   }
 
   return <Route {...rest} component={Component} />
