@@ -1,11 +1,20 @@
 import styled from 'styled-components';
+import {lengths} from '../../helpers/constants';
 
 export const Container = styled.div`
   display: flex;
-  border-width: 1px;
+  background: #fff;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+export const Content = styled.div`
+  display: flex;
   height: 100px;
   background: #fff;
   flex-direction: row;
+  width: 100%;
+  max-width: ${lengths.maxWidthContent};
 `;
 
 export const Logo = styled.div`

@@ -4,9 +4,11 @@ import * as Styles from './styles';
 const Header: React.FC = () => {
   return (
     <Styles.Container>
-      <Styles.Logo>
-        <h3>Logo</h3>
-      </Styles.Logo>
+      <Styles.Content>
+        <Styles.Logo>
+          <h3>Logo</h3>
+        </Styles.Logo>
+      </Styles.Content>
     </Styles.Container>
   )
 }
