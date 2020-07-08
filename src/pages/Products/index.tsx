@@ -2,14 +2,19 @@ import React, {useState, useEffect, useCallback} from 'react';
 
 import api from '../../services/api';
 import {IProduct, IMetaData} from '../../interfaces'
-import {List, message, Pagination} from 'antd';
-import {ItemProduct, HeaderList, Content} from './styles'
+import {List, message, Pagination, Button, Input} from 'antd';
+import {ItemProduct, HeaderList, Content, DivFilter} from './styles'
 import Header from '../../components/Header';
 import {useHistory} from 'react-router-dom';
 
 const Home = () => {
   const session = JSON.parse(sessionStorage.getItem('session') || '');
   const history = useHistory()
+  const [nameSearch, setNameSearch] = useState('')
+  const [descSearch, setDescSearch] = useState('')
+  const [catSearch, setCatSearch] = useState('')
+
+
   const [currentPage, setCurrentPage] = useState(1)
   const [metaData, setMetaData] = useState<IMetaData>()
   const [products, setProducts] = useState<IProduct[]>([])
@@ -18,10 +23,19 @@ const Home = () => {
     history.push(`/products/edit/${p.uuid}`)
   }
 
+  const goToNewProduct = () => {
+    history.push('/products/new')
+  }
+
   const getListProducts = useCallback(()=>{
     api.get(`products?page=${currentPage}`, {
       headers:{
         authorization: `Bearer ${session.token}`
+      },
+      params: {
+        name: nameSearch,
+        category: catSearch,
+        description: descSearch,
       }
     }).then(response=>{
       const tempMetaData:IMetaData = response.data.meta;
@@ -35,7 +49,7 @@ const Home = () => {
         }
       }
     })
-  },[session.token, currentPage])
+  },[catSearch, currentPage, descSearch, nameSearch, session.token])
 
   useEffect(()=>{
     getListProducts()
@@ -45,6 +59,23 @@ const Home = () => {
     <>
       <Header signed />
       <Content>
+        <DivFilter>
+          <Input
+            value={nameSearch}
+            onChange={(e) => setNameSearch(e.target.value)}
+            placeholder="Nome"
+          />
+          <Input 
+            value={catSearch}
+            onChange={(e) => setCatSearch(e.target.value)}
+            placeholder="Categoria"
+          />
+          <Input 
+            value={descSearch}
+            onChange={(e) => setDescSearch(e.target.value)}
+            placeholder="Descrição"
+          />
+        </DivFilter>
         <HeaderList>
           <label>Nome</label>
           <label>Categoria</label>
@@ -62,7 +93,6 @@ const Home = () => {
         )}/>
         <Pagination
           defaultCurrent={1}
-          showTotal={(total)=> `${total} itens`}
           defaultPageSize={metaData?.per_page}
           pageSize={metaData?.per_page || 10}
           total={metaData?.total}
@@ -70,6 +100,7 @@ const Home = () => {
           style={{display: 'flex', justifyContent: 'center'}}
           current={currentPage}
         />
+        <Button className="btnNewProduct" type="primary" onClick={goToNewProduct}>Novo</Button>
       </Content>
     </>
   )

@@ -8,22 +8,22 @@ interface ISession {
 }
 
 const Header = ({signed}:ISession) => {
-
   const history = useHistory();
   const handleLogout = () => {
     sessionStorage.removeItem('session');
     history.push('/sign_in')
   }
+
   const goToLogin = () => history.push('/sign_in')
 
   return (
     <Styles.Container>
       <Styles.Content>
-        <Styles.Logo>
+        <Styles.Logo onClick={() => history.push('/products')}>
           <h3>Logo</h3>
         </Styles.Logo>
         <Styles.Logout>
-          { signed 
+          { signed
             ? <Button onClick={handleLogout}>Sair</Button> 
             : <Button onClick={goToLogin}>Entrar</Button> 
           }

@@ -64,7 +64,6 @@ const SignIn = () => {
         </Form.Item>
       </Form>
       <label>Não possui conta? <Link to="sign_up">Clique aqui</Link></label>
-
     </Styles.Container>
   )
 }

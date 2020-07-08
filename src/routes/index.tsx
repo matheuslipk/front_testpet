@@ -6,6 +6,7 @@ import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
 import Products from '../pages/Products'
 import EditProducts from '../pages/EditProducts'
+import NewProducts from '../pages/NewProducts'
 import NotFound from '../pages/NotFound'
 
 const Routes: React.FC = () => {
@@ -15,6 +16,7 @@ const Routes: React.FC = () => {
       <Route path="/sign_up" component={SignUp} />
       <Route path="/products" exact isPrivate component={Products} />
       <Route path="/products/edit/:id" exact isPrivate component={EditProducts} />
+      <Route path="/products/new" exact isPrivate component={NewProducts} />
       <Route path="*" component={NotFound} />
     </Switch>
   )

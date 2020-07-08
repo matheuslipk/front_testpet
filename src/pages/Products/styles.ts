@@ -2,8 +2,14 @@ import styled from "styled-components";
 import {lengths} from '../../helpers/constants'
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: ${lengths.maxWidthContent};
+
+  .btnNewProduct {
+    margin: 10px auto;
+  }
 `;
 
 export const HeaderList = styled.div`
@@ -44,4 +50,9 @@ export const ItemProduct = styled.li`
       cursor: pointer;
     }
   }
+`;
+
+export const DivFilter = styled.div`
+  display: flex;
+  margin-top: 10px;
 `;

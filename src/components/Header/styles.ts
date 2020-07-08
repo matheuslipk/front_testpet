@@ -23,6 +23,7 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+  cursor: pointer;
 `;
 
 export const Logout = styled.div`
