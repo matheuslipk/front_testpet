@@ -12,8 +12,8 @@ import NotFound from '../pages/NotFound'
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route path="/sign_in" component={SignIn} />
-      <Route path="/sign_up" component={SignUp} />
+      <Route path="/sign_in" exact component={SignIn} />
+      <Route path="/sign_up" exact component={SignUp} />
       <Route path="/products" exact isPrivate component={Products} />
       <Route path="/products/edit/:id" exact isPrivate component={EditProducts} />
       <Route path="/products/new" exact isPrivate component={NewProducts} />

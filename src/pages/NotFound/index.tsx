@@ -1,12 +1,11 @@
 import React from 'react';
-import {useLocation} from 'react-router-dom'
-
-// import { Container } from './styles';
+import {Link} from 'react-router-dom'
 
 const NotFound = () => {
-  const location = useLocation();
   return (
-    <h1>Page Not Found <code>{location.pathname}</code> </h1>
+    <h1>
+      <Link to="sign_in">Login</Link>    
+    </h1>
   )
 }
 

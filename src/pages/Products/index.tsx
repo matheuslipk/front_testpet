@@ -91,7 +91,9 @@ const Home = () => {
           style={{display: 'flex', justifyContent: 'center'}}
           current={currentPage}
         />
-        <Button className="btnNewProduct" type="primary" onClick={goToNewProduct}>Novo</Button>
+        <Button className="btnNewProduct" type="primary" onClick={goToNewProduct}>
+          Novo Produto
+        </Button>
       </Content>
     </>
   )

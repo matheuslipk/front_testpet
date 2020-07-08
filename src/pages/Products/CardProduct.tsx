@@ -17,6 +17,8 @@ const CardProduct = ({product, onClick}:ICardProduct) => {
         <label><b>Nome:</b> {product.name}</label>
         <label><b>Categoria:</b> {product.category}</label>
         <label><b>Descrição:</b> {product.description}</label>
+        <label><b>Preço:</b> {product.price}</label>
+        <label><b>Estock:</b> {product.stock}</label>
       </DetailsProduct>
     </ItemProduct>
   )

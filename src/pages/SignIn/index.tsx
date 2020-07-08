@@ -16,8 +16,8 @@ const SignIn = () => {
   const [toSavePassword, setToSavePassword] = useState(false)
 
   const formItemLayout = {
-    labelCol: {span: 4},
-    wrapperCol: { span: 20 },
+    labelCol: {span: 3},
+    wrapperCol: { span: 21 },
   }
 
   const submitLayout = {
@@ -57,7 +57,7 @@ const SignIn = () => {
       }else{
         localStorage.removeItem(varsStorage.lastPasswordLogged)
       }
-      history.push('/')
+      history.push('/products')
     }).catch(e=>{
       if(e.response){
         const {status, data} = e.response;
