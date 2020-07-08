@@ -12,24 +12,9 @@ export const Content = styled.div`
   }
 `;
 
-export const HeaderList = styled.div`
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-
-  label {
-    flex: 1;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-  }
-`;
-
 export const ItemProduct = styled.li`
   display: flex;
-  height: 50px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
   margin: 8px 5px;
@@ -55,4 +40,16 @@ export const ItemProduct = styled.li`
 export const DivFilter = styled.div`
   display: flex;
   margin-top: 10px;
+`;
+
+export const DetailsProduct = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
+
+  label {
+    font-size: 16px;
+    text-align: left;
+  }
 `;

@@ -3,9 +3,10 @@ import React, {useState, useEffect, useCallback} from 'react';
 import api from '../../services/api';
 import {IProduct, IMetaData} from '../../interfaces'
 import {List, message, Pagination, Button, Input} from 'antd';
-import {ItemProduct, HeaderList, Content, DivFilter} from './styles'
+import {Content, DivFilter} from './styles'
 import Header from '../../components/Header';
 import {useHistory} from 'react-router-dom';
+import CardProduct from './CardProduct';
 
 const Home = () => {
   const session = JSON.parse(sessionStorage.getItem('session') || '');
@@ -62,35 +63,25 @@ const Home = () => {
         <DivFilter>
           <Input
             value={nameSearch}
-            onChange={(e) => setNameSearch(e.target.value)}
+            onChange={(e) => {setNameSearch(e.target.value); setCurrentPage(1)}}
             placeholder="Nome"
           />
           <Input 
             value={catSearch}
-            onChange={(e) => setCatSearch(e.target.value)}
+            onChange={(e) => {setCatSearch(e.target.value); setCurrentPage(1)}}
             placeholder="Categoria"
           />
           <Input 
             value={descSearch}
-            onChange={(e) => setDescSearch(e.target.value)}
+            onChange={(e) => {setDescSearch(e.target.value); setCurrentPage(1)}}
             placeholder="Descrição"
           />
         </DivFilter>
-        <HeaderList>
-          <label>Nome</label>
-          <label>Categoria</label>
-          <label>Descrição</label>
-        </HeaderList>
         <List
+          grid={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2, xxl: 2 }}
           size="small"
           dataSource={products}
-          renderItem={(item)=>(
-            <ItemProduct onClick={() => goToEditProducts(item)}>
-              <label>{item.name}</label>
-              <label>{item.category}</label>
-              <label>{item.description}</label>
-            </ItemProduct>
-        )}/>
+          renderItem={(item)=> <CardProduct product={item} onClick={()=>goToEditProducts(item)} />} />
         <Pagination
           defaultCurrent={1}
           defaultPageSize={metaData?.per_page}

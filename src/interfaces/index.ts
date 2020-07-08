@@ -4,6 +4,12 @@ export interface ErrorsEntity {
   message: string
 }
 
+export interface IUser {
+  uuid: string,
+  name: string,
+  email: string
+}
+
 export interface IProduct {
   uuid: string
   name: string
@@ -12,6 +18,7 @@ export interface IProduct {
   price: number
   stock: number
   created_at: string
+  user?: IUser
 }
 
 export interface IMetaData {
