@@ -10,5 +10,5 @@ export const varsStorage = {
 
 export const baseUrl = {
   local: 'http://localhost:3333',
-  external: 'http://testpet.bitdevs.com.br:3334'
+  external: 'https://api-testpet.herokuapp.com'
 }
