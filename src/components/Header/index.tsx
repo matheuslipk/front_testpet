@@ -20,8 +20,11 @@ const Header = ({signed}:ISession) => {
     <Styles.Container>
       <Styles.Content>
         <Styles.Logo onClick={() => history.push('/products')}>
-          <h3>Logo</h3>
+          <h3>Test Pet</h3>
         </Styles.Logo>
+        <Styles.Menu>
+          as
+        </Styles.Menu>
         <Styles.Logout>
           { signed
             ? <Button onClick={handleLogout}>Sair</Button> 

@@ -81,7 +81,14 @@ const Home = () => {
           grid={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 2, xxl: 2 }}
           size="small"
           dataSource={products}
-          renderItem={(item)=> <CardProduct product={item} onClick={()=>goToEditProducts(item)} />} />
+          renderItem={(item)=> (
+              <CardProduct 
+                token={session.token}
+                product={item} 
+                onClick={()=>goToEditProducts(item)}
+                onDelete={()=>getListProducts()}
+              />
+            )} />
         <Pagination
           defaultCurrent={1}
           defaultPageSize={metaData?.per_page}

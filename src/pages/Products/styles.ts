@@ -12,21 +12,30 @@ export const Content = styled.div`
   }
 `;
 
-export const ItemProduct = styled.li`
+export const DivCardProduct = styled.div`
   display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
   margin: 8px 5px;
   background-color: #fff;
   box-shadow: 1px 1px 5px;
   border-radius: 4px;
+  padding: 10px;
 
   &:hover {
     cursor: pointer;
-    background: #ddd;
-  }
+    background: #eee;
 
+    button {
+      background: #eee;
+    }
+  }
+`;
+
+export const ItemProduct = styled.li`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  
   label {
     text-align: center;
     flex: 1;
@@ -52,4 +61,14 @@ export const DetailsProduct = styled.div`
     font-size: 16px;
     text-align: left;
   }
+`;  
+
+export const DivOptions = styled.div`
+  display: flex;
+  margin-top: 10px;
 `;
+
+export const ItemDanger = styled.label`
+  color: red;
+  cursor: pointer;
+`

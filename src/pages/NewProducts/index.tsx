@@ -4,7 +4,7 @@ import api from '../../services/api';
 import {message, Form, Input, Button} from 'antd';
 import {Content} from './styles'
 import Header from '../../components/Header';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import { ErrorsEntity } from '../../interfaces';
 const EditProducts = () => {
   const session = JSON.parse(sessionStorage.getItem('session') || '')
@@ -56,6 +56,7 @@ const EditProducts = () => {
       <Header signed />
       <Content>
         <Form size="large" labelCol={{ span: 4 }} wrapperCol={{ span: 20 }}>
+          <Link to="/products">Lista de produtos</Link>
           <h2>Novo</h2>
           <Form.Item label="Nome">
             <Input value={name} onChange={(e) => setName(e.target.value)} />

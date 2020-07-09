@@ -9,6 +9,6 @@ export const varsStorage = {
 }
 
 export const baseUrl = {
-  local: 'http://localhost:3333',
+  local: 'http://localhost',
   external: 'https://api-testpet.herokuapp.com'
 }

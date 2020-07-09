@@ -16,5 +16,10 @@ export const Content = styled.div`
     margin-top: 20px;
     border-radius: 5px;
     box-shadow: 2px 2px 5px;
+
+    h2 {
+      text-align: center;
+    }
+    
   }
 `;
