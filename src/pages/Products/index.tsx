@@ -60,6 +60,7 @@ const Home = () => {
     <>
       <Header signed />
       <Content>
+        <h3>Filtros</h3>
         <DivFilter>
           <Input
             value={nameSearch}

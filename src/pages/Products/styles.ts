@@ -7,6 +7,10 @@ export const Content = styled.div`
   margin: 0 auto;
   max-width: ${lengths.maxWidthContent};
 
+  h3 {
+    text-align: center;
+  }
+
   .btnNewProduct {
     margin: 10px auto;
   }

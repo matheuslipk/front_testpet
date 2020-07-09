@@ -32,7 +32,6 @@ export const Menu = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  border: 1px solid;
 `;
 
 export const Logout = styled.div`

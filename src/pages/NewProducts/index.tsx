@@ -67,7 +67,7 @@ const EditProducts = () => {
           <Form.Item label="Descrição">
             <Input value={description} onChange={(e) => setDescription(e.target.value)} />
           </Form.Item>
-          <Form.Item label="Preço">
+          <Form.Item label="Preço R$">
             <Input
               type="number"
               value={price} 

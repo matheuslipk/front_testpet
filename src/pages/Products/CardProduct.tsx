@@ -21,9 +21,9 @@ const CardProduct = ({product, onClick, token, onDelete}:ICardProduct) => {
   const {confirm} = Modal;
   const showDelete = () => {
     confirm({
-      title: 'Are you sure delete this task?',
+      title: 'Deseja apagar esse produto?',
       icon: <ExclamationCircleOutlined />,
-      content: 'Some descriptions',
+      content: 'Essa ação não pode ser desfeita',
       okText: 'Confirmar',
       cancelText: 'Voltar',
       onOk() {
